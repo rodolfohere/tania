@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Para ti 💖</title>
+  
+<div class="carrusel">
+  <img src="mireina0.jpg" />
+  <img src="mireina1.jpeg" />
+  <img src="mireina2.jpeg" />
+  <img src="mireina3.jpeg" />
+</div>
+
+  <style>
+    .carrusel {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto 18px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 25px rgb(255, 255, 255);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+.carrusel img {
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  animation: slide 12s infinite;
+}
+.carrusel img:nth-child(0) { animation-delay: 0s; }
+.carrusel img:nth-child(1) { animation-delay: 0s; }
+.carrusel img:nth-child(2) { animation-delay: 4s; }
+.carrusel img:nth-child(3) { animation-delay: 8s; }
+
+@keyframes slide {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #db2d41, #000000);
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .card {
+      position: relative;
+      width: 800%;
+      max-width: 600px;
+      padding: 24px 20px 28px;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+      text-align: center;
+    }
+
+    .title {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-bottom: 18px;
+    }
+
+    .heart {
+      width: 80px;
+      height: 80px;
+      background: #ff4b6e;
+      position: relative;
+      margin: 0 auto 18px;
+      transform: rotate(-45deg);
+      animation: beat 1.2s infinite;
+      box-shadow: 0 0 25px rgba(255, 75, 110, 0.7);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: #ff4b6e;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -40px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 40px;
+      top: 0;
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: rotate(-45deg) scale(1);
+      }
+      60% {
+        transform: rotate(-45deg) scale(1.15);
+      }
+      100% {
+        transform: rotate(-45deg) scale(0.95);
+      }
+    }
+
+    .btn {
+      margin-top: 10px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #f54865, #e281a9);
+      color: #ff0000;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgb(0, 0, 0);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s;
+    }
+
+    .btn:active {
+      transform: translateY(2px) scale(0.98);
+      box-shadow: 0 5px 12px rgb(0, 0, 0);
+    }
+
+    .message {
+      margin-top: 16px;
+      font-size: 0.98rem;
+      line-height: 1.5;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.5s ease, max-height 0.5s ease;
+    }
+
+    .message.show {
+      opacity: 1;
+      max-height: 300px;
+    }
+
+    .signature {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    /* Corazones flotando en el fondo */
+    .floating-heart {
+      position: fixed;
+      bottom: -40px;
+      font-size: 20px;
+      opacity: 0.8;
+      animation: floatUp 10s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) translateX(0) scale(0.8);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) translateX(40px) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="heart"></div>
+    <h1 class="title">Para ti 💌</h1>
+    <p class="subtitle">💕💌Toca el botón, que tengo algo que decirte.💌💕</p>
+
+    <button class="btn" id="btnMostrar">ABRIR</button>
+
+    <p class="message" id="mensaje">
+      HOLA MI REINA HERMOSA, peleonera,mi niña chiquitica mi vida hermosa te amo muchisimo y amo cada momento 
+      que paso contigo: <br><br>
+      <strong>VIDA me encantas más de lo que estas palabras pueden explicar.</strong>
+    </p>
+
+    <p class="signature">
+      Con cariño,<br>
+      <!-- RODOLFO-->
+      💕💕💕RODOLFO💕💕💕
+    </p>
+  </div>
+
+  <script>
+    const btn = document.getElementById("btnMostrar");
+    const mensaje = document.getElementById("mensaje");
+    let mostrado = false;
+
+    btn.addEventListener("click", () => {
+      mostrado = !mostrado;
+      if (mostrado) {
+        mensaje.classList.add("show");
+        btn.textContent = "CERRAR";
+      } else {
+        mensaje.classList.remove("show");
+        btn.textContent = "ABRIR";
+      }
+    });
+
+    // Corazones flotando aleatorios
+    function crearCorazon() {
+      const heart = document.createElement("div");
+      heart.classList.add("floating-heart");
+      heart.textContent = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 4 + Math.random() * 4 + "s";
+      heart.style.fontSize = 16 + Math.random() * 18 + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 8000);
+    }
+
+    setInterval(crearCorazon, 900);
+  </script>
+</body>
+</html>
