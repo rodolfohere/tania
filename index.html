@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <title>Para ti 💖</title>
+  
+<div class="carrusel">
+  <img src="mireina0.jpg" />
+  <img src="mireina1.jpeg" />
+  <img src="mireina2.jpeg" />
+  <img src="mireina3.jpeg" />
+</div>
 
   <style>
-.carrusel {
+    .carrusel {
   width: 500px;
   height: 500px;
   margin: 0 auto 18px;
@@ -43,13 +50,6 @@
       box-sizing: border-box;
       font-family: "Segoe UI", system-ui, sans-serif;
     }
-    /* ESTILOS GENERALES */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", system-ui, sans-serif;
-    }
 
     body {
       min-height: 100vh;
@@ -59,11 +59,11 @@
       background: radial-gradient(circle at top, #db2d41, #000000);
       overflow: hidden;
       color: #fff;
-      padding: 20px;
     }
 
     .card {
-      width: 100%;
+      position: relative;
+      width: 800%;
       max-width: 600px;
       padding: 24px 20px 28px;
       background: rgba(0, 0, 0, 0.25);
@@ -74,13 +74,13 @@
     }
 
     .title {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       margin-bottom: 8px;
       letter-spacing: 1px;
     }
 
     .subtitle {
-      font-size: 1rem;
+      font-size: 0.9rem;
       opacity: 0.9;
       margin-bottom: 18px;
     }
@@ -117,23 +117,28 @@
     }
 
     @keyframes beat {
-      0%, 100% { transform: rotate(-45deg) scale(1); }
-      60% { transform: rotate(-45deg) scale(1.15); }
-      100% { transform: rotate(-45deg) scale(0.95); }
+      0%, 100% {
+        transform: rotate(-45deg) scale(1);
+      }
+      60% {
+        transform: rotate(-45deg) scale(1.15);
+      }
+      100% {
+        transform: rotate(-45deg) scale(0.95);
+      }
     }
 
     .btn {
       margin-top: 10px;
-      padding: 12px 22px;
+      padding: 10px 18px;
       border-radius: 999px;
       border: none;
       background: linear-gradient(135deg, #f54865, #e281a9);
-      color: #fff;
+      color: #ff0000;
       font-weight: 600;
       cursor: pointer;
       box-shadow: 0 10px 20px rgb(0, 0, 0);
       transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s;
-      font-size: 1rem;
     }
 
     .btn:active {
@@ -143,7 +148,7 @@
 
     .message {
       margin-top: 16px;
-      font-size: 1rem;
+      font-size: 0.98rem;
       line-height: 1.5;
       opacity: 0;
       max-height: 0;
@@ -153,16 +158,16 @@
 
     .message.show {
       opacity: 1;
-      max-height: 600px;
+      max-height: 300px;
     }
 
     .signature {
       margin-top: 14px;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       opacity: 0.85;
     }
 
-    /* CORAZONES FLOTANTES */
+    /* Corazones flotando en el fondo */
     .floating-heart {
       position: fixed;
       bottom: -40px;
@@ -173,30 +178,28 @@
     }
 
     @keyframes floatUp {
-      0% { transform: translateY(0) translateX(0) scale(0.8); opacity: 0; }
-      10% { opacity: 1; }
-      100% { transform: translateY(-110vh) translateX(40px) scale(1.2); opacity: 0; }
+      0% {
+        transform: translateY(0) translateX(0) scale(0.8);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) translateX(40px) scale(1.2);
+        opacity: 0;
+      }
     }
   </style>
 </head>
-
 <body>
-
   <div class="card">
-
     <div class="heart"></div>
-
-    <div class="carrusel">
-      <img src="mireina0.jpg" />
-      <img src="mireina1.jpeg" />
-      <img src="mireina2.jpeg" />
-      <img src="mireina3.jpeg" />
-    </div>
-
     <h1 class="title">Para ti 💌</h1>
     <p class="subtitle">💕💌Toca el botón, que tengo algo que decirte.💌💕</p>
 
     <button class="btn" id="btnMostrar">ABRIR</button>
+
 
     <p class="message" id="mensaje">
       HOLA MI REINA HERMOSA, peleonera, mi niña chiquitica mi vida hermosa te amo muchísimo y amo cada momento que paso contigo.  
@@ -249,5 +252,6 @@
 
 </body>
 </html>
+
 
 
